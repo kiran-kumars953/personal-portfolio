@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 5s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+[data-aos="drop-bounce"] {
+  opacity: 0;
+}
+[data-aos="drop-bounce"].aos-animate {
+  animation: dropBounce 1.2s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
+}
+
+@keyframes dropBounce {
+  0% { transform: translateY(-300px); opacity: 0; }
+  50% { transform: translateY(0); opacity: 1; }
+  65% { transform: translateY(-40px); opacity: 1; }
+  80% { transform: translateY(0); opacity: 1; }
+  90% { transform: translateY(-15px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ---- International phone input (react-phone-number-input) dark theme ---- */
+.contact-phone-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.contact-phone-input .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 0.25rem;
+  padding-right: 0.6rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+.contact-phone-input .PhoneInputCountryIcon {
+  width: 1.5rem;
+  height: 1.05rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.contact-phone-input .PhoneInputCountryIcon--border {
+  background-color: transparent;
+}
+.contact-phone-input .PhoneInputCountrySelectArrow {
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-left: 0.1rem;
+}
+.contact-phone-input .PhoneInputInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+}
+.contact-phone-input .PhoneInputInput::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+/* Native country dropdown options (rendered with OS styling) — keep readable */
+.contact-phone-input .PhoneInputCountrySelect option {
+  color: #000;
+  background: #fff;
+}
