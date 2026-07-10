@@ -6,9 +6,15 @@
   "scripts": {
     "dev": "vite",
     "dev:cf": "wrangler pages dev -- npm run dev",
+    "dev:worker": "wrangler dev",
     "build": "vite build",
+    "deploy:cf": "npm run build && wrangler pages deploy dist --project-name personal-portfolio",
+    "deploy:worker": "npm run build && wrangler deploy",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

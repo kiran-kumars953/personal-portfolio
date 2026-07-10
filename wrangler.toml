@@ -1,0 +1,7 @@
+name = "personal-portfolio"
+main = "./worker-entry.js"
+compatibility_date = "2026-07-10"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
